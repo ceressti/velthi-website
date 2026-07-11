@@ -1,0 +1,68 @@
+/* Velthi — header + footer partajate pe toate paginile.
+   Editează AICI ca să schimbi nav-ul sau footer-ul peste tot deodată. */
+
+@font-face{
+  font-family:"Lora";
+  src:url("/assets/fonts/Lora.woff2") format("woff2");
+  font-weight:400 700;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Lora";
+  src:url("/assets/fonts/Lora-Italic.woff2") format("woff2");
+  font-weight:400 700;
+  font-style:italic;
+  font-display:swap;
+}
+
+:root{
+  --cream:#f1ebe4;
+  --cream-deep:#e7dfd1;
+  --paper:#fbf9f5;
+  --card:#ffffff;
+  --sage:#9cafa2;
+  --sage-dark:#719287;
+  --sage-deep:#4c6a5d;
+  --sage-mist:#e7ebe3;
+  --beige:#d2c3af;
+  --charcoal:#303030;
+  --ink:#35332e;
+  --muted:#5d584f;
+  --soft:#8a8478;
+  --line:#e2dacb;
+  --serif:"Lora",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:color-mix(in srgb, var(--cream) 88%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 24px; max-width:1120px; margin:0 auto}
+.nav-logo img{height:34px; width:auto}
+.nav-links{display:flex; gap:28px; align-items:center; font-size:14px}
+.nav-links a{color:var(--muted); text-decoration:none}
+.nav-links a:hover{color:var(--charcoal)}
+.nav-cta{
+  background:var(--charcoal); color:var(--cream) !important; border-radius:999px;
+  padding:8px 18px; font-weight:600; font-size:13px;
+}
+@media (max-width:640px){ .nav-links a:not(.nav-cta){display:none} }
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line); background:var(--paper)}
+.foot-inner{
+  display:flex; flex-direction:column; gap:14px;
+  padding:30px 24px; max-width:1120px; margin:0 auto;
+  font-size:13px; color:var(--soft);
+}
+.foot-top{display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap}
+.foot-inner img{height:26px; width:auto}
+.foot-inner a{color:var(--muted); text-decoration:none}
+.foot-inner a:hover{color:var(--charcoal)}
+.foot-links{display:flex; gap:22px; flex-wrap:wrap}
+.foot-legal{font-size:12.5px; line-height:1.6}

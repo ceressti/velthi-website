@@ -5,45 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Politica de Confidențialitate · Velthi</title>
 <meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="/assets/velthi-icon.png">
+<link rel="stylesheet" href="/assets/site-chrome.css">
 <style>
-  :root {
-    --sage: #9cafa2; --sage-dark: #719287; --beige: #d2c3af;
-    --cream: #f1ebe4; --charcoal: #303030; --muted: #6b6b6b;
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:var(--sans); line-height:1.65; font-size:16px;
+    -webkit-font-smoothing:antialiased;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--cream); color: var(--charcoal);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.65; font-size: 16px;
-  }
-  header {
-    background: var(--sage-dark); padding: 20px 24px;
-  }
-  header a {
-    color: #fff; text-decoration: none; font-weight: 700;
-    font-size: 18px; letter-spacing: 2px;
-  }
-  main {
-    max-width: 760px; margin: 0 auto; padding: 32px 24px 64px;
-  }
-  h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.3px; }
-  h2 { font-size: 21px; margin-top: 40px; color: var(--sage-dark); }
-  h3 { font-size: 17px; margin-top: 28px; }
-  a { color: var(--sage-dark); }
-  .tablewrap { overflow-x: auto; }
-  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14.5px; }
-  th, td { border: 1px solid var(--beige); padding: 10px 12px; text-align: left; vertical-align: top; }
-  th { background: rgba(156,175,162,0.18); }
-  footer {
-    max-width: 760px; margin: 0 auto; padding: 24px;
-    border-top: 1px solid var(--beige); font-size: 13.5px; color: var(--muted);
-  }
-  footer nav { margin-bottom: 8px; }
-  footer nav a { margin-right: 16px; }
+  img{max-width:100%; display:block}
+  main{max-width:760px; margin:0 auto; padding:40px 24px 64px}
+  h1{font-family:var(--serif); font-weight:500; font-size:32px; line-height:1.2; text-wrap:balance; margin:0 0 8px}
+  h2{font-family:var(--serif); font-weight:500; font-size:22px; margin:40px 0 0; color:var(--sage-deep)}
+  h3{font-size:17px; margin:28px 0 0}
+  p{margin:12px 0}
+  a{color:var(--sage-deep)}
+  :focus-visible{outline:2px solid var(--sage-dark); outline-offset:3px; border-radius:4px}
+  .tablewrap{overflow-x:auto}
+  table{border-collapse:collapse; width:100%; margin:16px 0; font-size:14.5px}
+  th,td{border:1px solid var(--beige); padding:10px 12px; text-align:left; vertical-align:top}
+  th{background:rgba(156,175,162,0.18)}
+  hr{border:none; border-top:1px solid var(--beige); margin:36px 0}
 </style>
 </head>
 <body>
-<header><a href="/">VELTHI</a></header>
+
+<nav class="nav" aria-label="Navigație principală">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Velthi, acasă"><img src="/assets/velthi-logo.png" alt="Velthi"></a>
+    <div class="nav-links">
+      <a href="/#cum-functioneaza">Cum funcționează</a>
+      <a href="/#functii">Funcții</a>
+      <a href="/#recompense">Recompense</a>
+      <a href="/#intrebari">Întrebări</a>
+      <a class="nav-cta" href="/#descarca">În curând</a>
+    </div>
+  </div>
+</nav>
+
 <main>
 <h1>Politica de Confidențialitate</h1>
 <p><strong>Aplicația Velthi</strong>
@@ -284,12 +284,21 @@
 <strong>Contact:</strong> <a href="mailto:hello@sauve.ro">hello@sauve.ro</a>
 <strong>Versiune:</strong> 1.0
 <strong>Data ultimei actualizări:</strong> 10 iulie 2026</p>
-
 </main>
+
 <footer>
-  <nav><a href="/">Acasă</a><a href="/privacy">Confidențialitate</a><a href="/terms">Termeni și Condiții</a></nav>
-  Ignaris Prime SRL · J13/489/2017 · CUI RO37156492 · Constanța, str. Ștefan Mihăileanu, nr. 45 ·
-  <a href="mailto:hello@sauve.ro">hello@sauve.ro</a>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <img src="/assets/velthi-logo.png" alt="Velthi">
+      <div class="foot-links">
+        <a href="/privacy">Politica de Confidențialitate</a>
+        <a href="/terms">Termeni și Condiții</a>
+        <a href="/contact">Contact</a>
+        <a href="https://sauve.ro" target="_blank" rel="noopener">Din familia Sauvé</a>
+      </div>
+    </div>
+    <span class="foot-legal">© 2026 Ignaris Prime SRL. Toate drepturile rezervate.</span>
+  </div>
 </footer>
 </body>
 </html>

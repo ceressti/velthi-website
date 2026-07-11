@@ -14,22 +14,8 @@
 <meta property="og:description" content="Fotografiezi eticheta cu ingrediente, Velthi face restul: rutină personalizată, program pe zile și recompense pentru consecvență. Gratuită, în limba română.">
 <meta property="og:image" content="https://velthi.app/assets/velthi-icon.png">
 <meta property="og:locale" content="ro_RO">
+<link rel="stylesheet" href="/assets/site-chrome.css">
 <style>
-  @font-face{
-    font-family:"Lora";
-    src:url("assets/fonts/Lora.woff2") format("woff2");
-    font-weight:400 700;
-    font-style:normal;
-    font-display:swap;
-  }
-  @font-face{
-    font-family:"Lora";
-    src:url("assets/fonts/Lora-Italic.woff2") format("woff2");
-    font-weight:400 700;
-    font-style:italic;
-    font-display:swap;
-  }
-
   :root{
     --cream:#f1ebe4;
     --cream-deep:#e7dfd1;
@@ -71,24 +57,6 @@
     font-family:var(--sans); font-size:12px; font-weight:600;
     letter-spacing:.18em; text-transform:uppercase; color:var(--sage-dark);
   }
-
-  /* ---------- Nav ---------- */
-  .nav{
-    position:sticky; top:0; z-index:50;
-    background:color-mix(in srgb, var(--cream) 88%, transparent);
-    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-    border-bottom:1px solid color-mix(in srgb, var(--line) 60%, transparent);
-  }
-  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 24px; max-width:1120px; margin:0 auto}
-  .nav-logo img{height:34px; width:auto}
-  .nav-links{display:flex; gap:28px; align-items:center; font-size:14px}
-  .nav-links a{color:var(--muted); text-decoration:none}
-  .nav-links a:hover{color:var(--charcoal)}
-  .nav-cta{
-    background:var(--charcoal); color:var(--cream) !important; border-radius:999px;
-    padding:8px 18px; font-weight:600; font-size:13px;
-  }
-  @media (max-width:640px){ .nav-links a:not(.nav-cta){display:none} }
 
   /* ---------- Hero ---------- */
   .hero{position:relative; overflow:hidden}
@@ -245,20 +213,6 @@
   .final p{color:var(--muted); max-width:52ch; margin:0 auto 34px}
   .final .store-row{justify-content:center}
 
-  /* ---------- Footer ---------- */
-  footer{border-top:1px solid var(--line); background:var(--paper)}
-  .foot-inner{
-    display:flex; flex-direction:column; gap:14px;
-    padding:30px 24px; max-width:1120px; margin:0 auto;
-    font-size:13px; color:var(--soft);
-  }
-  .foot-top{display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap}
-  .foot-inner img{height:26px; width:auto}
-  .foot-inner a{color:var(--muted); text-decoration:none}
-  .foot-inner a:hover{color:var(--charcoal)}
-  .foot-links{display:flex; gap:22px; flex-wrap:wrap}
-  .foot-legal{font-size:12.5px; line-height:1.6}
-
   /* ---------- Reveal ---------- */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
   .reveal.in{opacity:1; transform:none}
@@ -268,13 +222,13 @@
 
 <nav class="nav" aria-label="Navigație principală">
   <div class="nav-inner">
-    <a class="nav-logo" href="#" aria-label="Velthi, acasă"><img src="assets/velthi-logo.png" alt="Velthi"></a>
+    <a class="nav-logo" href="/" aria-label="Velthi, acasă"><img src="/assets/velthi-logo.png" alt="Velthi"></a>
     <div class="nav-links">
-      <a href="#cum-functioneaza">Cum funcționează</a>
-      <a href="#functii">Funcții</a>
-      <a href="#recompense">Recompense</a>
-      <a href="#intrebari">Întrebări</a>
-      <a class="nav-cta" href="#descarca">În curând</a>
+      <a href="/#cum-functioneaza">Cum funcționează</a>
+      <a href="/#functii">Funcții</a>
+      <a href="/#recompense">Recompense</a>
+      <a href="/#intrebari">Întrebări</a>
+      <a class="nav-cta" href="/#descarca">În curând</a>
     </div>
   </div>
 </nav>
@@ -491,7 +445,7 @@
 <footer>
   <div class="foot-inner">
     <div class="foot-top">
-      <img src="assets/velthi-logo.png" alt="Velthi">
+      <img src="/assets/velthi-logo.png" alt="Velthi">
       <div class="foot-links">
         <a href="/privacy">Politica de Confidențialitate</a>
         <a href="/terms">Termeni și Condiții</a>
