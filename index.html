@@ -248,14 +248,16 @@
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line); background:var(--paper)}
   .foot-inner{
-    display:flex; justify-content:space-between; align-items:center; gap:18px;
-    flex-wrap:wrap; padding:30px 24px; max-width:1120px; margin:0 auto;
+    display:flex; flex-direction:column; gap:14px;
+    padding:30px 24px; max-width:1120px; margin:0 auto;
     font-size:13px; color:var(--soft);
   }
+  .foot-top{display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap}
   .foot-inner img{height:26px; width:auto}
   .foot-inner a{color:var(--muted); text-decoration:none}
   .foot-inner a:hover{color:var(--charcoal)}
   .foot-links{display:flex; gap:22px; flex-wrap:wrap}
+  .foot-legal{font-size:12.5px; line-height:1.6}
 
   /* ---------- Reveal ---------- */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
@@ -488,11 +490,16 @@
 
 <footer>
   <div class="foot-inner">
-    <img src="assets/velthi-logo.png" alt="Velthi">
-    <div class="foot-links">
-      <a href="https://sauve.ro" target="_blank" rel="noopener">Din familia Sauvé</a>
+    <div class="foot-top">
+      <img src="assets/velthi-logo.png" alt="Velthi">
+      <div class="foot-links">
+        <a href="/privacy">Politica de Confidențialitate</a>
+        <a href="/terms">Termeni și Condiții</a>
+        <a href="mailto:hello@sauve.ro">hello@sauve.ro</a>
+        <a href="https://sauve.ro" target="_blank" rel="noopener">Din familia Sauvé</a>
+      </div>
     </div>
-    <span>© 2026 Ignaris Prime SRL. Toate drepturile rezervate.</span>
+    <span class="foot-legal">Ignaris Prime SRL · J13/489/2017 · CUI RO37156492 · Constanța, str. Ștefan Mihăileanu, nr. 45 · © 2026. Toate drepturile rezervate.</span>
   </div>
 </footer>
 
