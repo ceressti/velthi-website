@@ -1,0 +1,23 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/app",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*(iPhone|iPad|iPod).*" }],
+      "destination": "https://apps.apple.com/app/id6769715940",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "has": [{ "type": "header", "key": "user-agent", "value": ".*Android.*" }],
+      "destination": "https://velthi.app/",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "destination": "https://velthi.app/",
+      "permanent": false
+    }
+  ]
+}
