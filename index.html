@@ -214,6 +214,38 @@
   .final p{color:var(--muted); max-width:52ch; margin:0 auto 34px}
   .final .store-row{justify-content:center}
 
+  /* ---------- Media & showcase ---------- */
+  .showcase-figure{
+    position:relative; max-width:1120px; margin:0 auto; border-radius:24px; overflow:hidden;
+    border:1px solid var(--line); box-shadow:0 34px 64px -34px rgba(48,48,48,.32);
+  }
+  .showcase-figure img{width:100%; height:auto; display:block; aspect-ratio:1264/848; object-fit:cover}
+  .showcase-cap{
+    position:absolute; inset:auto 0 0 0; margin:0; padding:60px 30px 26px;
+    background:linear-gradient(to top, rgba(38,38,36,.74), transparent);
+    color:#fff; font-family:var(--serif); font-weight:500; line-height:1.3;
+    font-size:clamp(18px,2.1vw,25px); max-width:36ch; text-shadow:0 1px 14px rgba(0,0,0,.3);
+  }
+
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center; max-width:1120px; margin:0 auto}
+  .split-media img{
+    width:100%; height:auto; border-radius:20px; border:1px solid var(--line);
+    box-shadow:0 26px 52px -30px rgba(48,48,48,.3); aspect-ratio:1264/848; object-fit:cover; display:block;
+  }
+  .split-copy h2{font-size:clamp(26px,3.1vw,36px); color:var(--charcoal); margin:0 0 14px}
+  .split-copy p{color:var(--muted); font-size:16.5px; margin:0}
+  .split-copy .kicker{display:block; margin-bottom:16px}
+  .split-phone-media{display:flex; justify-content:center}
+  .phone-frame{
+    width:264px; max-width:80%; padding:9px; background:var(--charcoal);
+    border-radius:36px; box-shadow:0 36px 64px -28px rgba(48,48,48,.5);
+  }
+  .phone-frame img{width:100%; height:auto; border-radius:28px; display:block}
+  @media (max-width:760px){
+    .split{grid-template-columns:1fr; gap:30px}
+    .split.reverse .split-media, .split.reverse .split-phone-media{order:-1}
+  }
+
   /* ---------- Reveal ---------- */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
   .reveal.in{opacity:1; transform:none}
@@ -275,6 +307,13 @@
   </div>
 </header>
 
+<section>
+  <figure class="showcase-figure reveal">
+    <img src="/assets/lifestyle-store.jpg" alt="Femeie care fotografiază cu telefonul eticheta cu ingrediente a unui produs de îngrijire, direct în magazin" width="1264" height="848" loading="lazy">
+    <figcaption class="showcase-cap">Fotografiezi eticheta chiar în magazin. Velthi îți spune pe loc dacă produsul ți se potrivește.</figcaption>
+  </figure>
+</section>
+
 <div class="band">
   <div class="band-inner">
     <div class="band-item reveal">
@@ -323,6 +362,19 @@
   </div>
 </section>
 
+<section>
+  <div class="split reverse">
+    <div class="split-media reveal">
+      <img src="/assets/lifestyle-routine.jpg" alt="Femeie care își aplică serul cu pipeta în fața oglinzii, cu produsele de îngrijire pe blat" width="1264" height="848" loading="lazy">
+    </div>
+    <div class="split-copy reveal">
+      <span class="kicker">Rutina ta, pas cu pas</span>
+      <h2>În ordinea corectă, dimineața și seara.</h2>
+      <p>Velthi îți arată exact ce produs urmează la fiecare pas. Fără liste confuze, fără „sau". Bifezi ce ai aplicat și treci mai departe, liniștită.</p>
+    </div>
+  </div>
+</section>
+
 <section id="functii" style="padding-top:0">
   <div class="container">
     <div class="section-head reveal">
@@ -360,6 +412,21 @@
         <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3V4z"/><path d="M9 9h6M9 13h6"/></svg></div>
         <b>Jurnalul pielii</b>
         <span>Notezi cum se simte pielea ta și vezi în timp ce funcționează. Memoria ta poate să uite, jurnalul nu.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div class="split-copy reveal">
+      <span class="kicker">Din aplicație</span>
+      <h2>Progresul tău, la vedere.</h2>
+      <p>Fiecare zi bifată se adună într-o serie. Vezi cât mai ai până la următoarea recompensă Sauvé, direct pe ecranul principal.</p>
+    </div>
+    <div class="split-phone-media reveal">
+      <div class="phone-frame">
+        <img src="/assets/app-home.jpg" alt="Ecranul principal al aplicației Velthi: rutina de seară cu pași bifabili și seria de zile consecutive" width="640" height="1455" loading="lazy">
       </div>
     </div>
   </div>
