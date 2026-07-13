@@ -84,6 +84,8 @@
   }
   .store-btn small{font-size:10.5px; letter-spacing:.05em; opacity:.72}
   .store-btn b{font-size:16px; font-weight:600}
+  a.store-btn{text-decoration:none; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease}
+  a.store-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(48,48,48,.28)}
   .soon-note{font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--soft)}
 
   /* ---------- Phone mock ---------- */
@@ -261,7 +263,7 @@
       <a href="/#functii">Funcții</a>
       <a href="/#recompense">Recompense</a>
       <a href="/#intrebari">Întrebări</a>
-      <a class="nav-cta" href="/#descarca">În curând</a>
+      <a class="nav-cta" href="/#descarca">Descarcă</a>
     </div>
   </div>
 </nav>
@@ -273,9 +275,9 @@
       <h1>Rutina ta de îngrijire, <em>în sfârșit clară</em>.</h1>
       <p class="sub">Velthi îți construiește rutina din produsele pe care le ai deja acasă. Fotografiezi eticheta cu ingrediente, iar aplicația îți spune ce e produsul, dacă ți se potrivește și unde îi e locul.</p>
       <div class="store-row">
-        <div class="store-btn" aria-disabled="true"><small>În curând pe</small><b>App Store</b></div>
+        <a class="store-btn is-live" href="https://apps.apple.com/app/id6769715940" target="_blank" rel="noopener"><small>Descarcă pe</small><b>App Store</b></a>
         <div class="store-btn" aria-disabled="true"><small>În curând pe</small><b>Google Play</b></div>
-        <span class="soon-note">Lansare în curând</span>
+        <span class="soon-note">Google Play, în curând</span>
       </div>
     </div>
     <div class="phone-wrap" aria-hidden="true">
@@ -489,8 +491,8 @@
         <p>Contul se face simplu, cu un link primit pe email, fără parolă. Datele tale rămân ale tale: îți poți șterge contul oricând, direct din aplicație, cu tot cu date.</p>
       </details>
       <details class="faq-item reveal">
-        <summary>Când se lansează?</summary>
-        <p>În curând, pe App Store și Google Play. Butoanele de descărcare de pe această pagină se activează în ziua lansării.</p>
+        <summary>Pot să o descarc acum?</summary>
+        <p>Da, pe App Store. O descarci de pe butonul din această pagină. Pe Google Play ajunge în curând.</p>
       </details>
     </div>
   </div>
@@ -500,9 +502,9 @@
   <div class="container">
     <img class="logo-mark reveal" src="assets/velthi-icon.png" alt="" aria-hidden="true">
     <h2 class="reveal">Pielea ta merită un plan.</h2>
-    <p class="reveal">Velthi se lansează în curând pe App Store și Google Play. Rutina clară, programul pe zile și recompensele te așteaptă.</p>
+    <p class="reveal">Velthi e disponibilă pe App Store, iar pe Google Play ajunge în curând. Rutina clară, programul pe zile și recompensele te așteaptă.</p>
     <div class="store-row reveal">
-      <div class="store-btn" aria-disabled="true"><small>În curând pe</small><b>App Store</b></div>
+      <a class="store-btn is-live" href="https://apps.apple.com/app/id6769715940" target="_blank" rel="noopener"><small>Descarcă pe</small><b>App Store</b></a>
       <div class="store-btn" aria-disabled="true"><small>În curând pe</small><b>Google Play</b></div>
     </div>
   </div>
