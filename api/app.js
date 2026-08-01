@@ -12,6 +12,11 @@
 //      printed starts pointing at the store.
 
 const APPLE_ID = "6769715940";
+// Provider token from App Store Connect (Analytics > Acquisition > Campaigns).
+// Apple only reports a campaign fully when ct is paired with pt; ct on its own
+// is passed through but leaves the attribution partial. Not a secret: it rides
+// in every campaign link Apple generates for public marketing use.
+const APPLE_PROVIDER_TOKEN = "120099410";
 const ANDROID_PACKAGE = "com.ignaris.velthi";
 
 // Flip to true the day the Play production release is live. Until then Android
@@ -28,11 +33,11 @@ function platformOf(ua) {
 }
 
 function appleUrl(campaign) {
-  // Apple reads ct (campaign token) + mt, not utm_*. It surfaces in App Store
-  // Connect > App Analytics > Campaigns. Note: Apple pairs ct with pt (provider
-  // token) for full campaign reporting; add pt here once it is pulled from App
-  // Store Connect. ct alone is still passed through and harmless.
-  const u = new URL(`https://apps.apple.com/app/id${APPLE_ID}`);
+  // Apple reads pt + ct + mt, not utm_*. The trio surfaces in App Store Connect
+  // > Analytics > Acquisition > Campaigns. The /app/apple-store/id form is the
+  // one Apple's own campaign-link generator emits, so we match it exactly.
+  const u = new URL(`https://apps.apple.com/app/apple-store/id${APPLE_ID}`);
+  u.searchParams.set("pt", APPLE_PROVIDER_TOKEN);
   if (campaign) u.searchParams.set("ct", campaign);
   u.searchParams.set("mt", "8");
   return u.toString();
