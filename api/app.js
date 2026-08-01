@@ -55,10 +55,18 @@ function siteUrl(params) {
   return q ? `${SITE}?${q}` : SITE;
 }
 
+// Two very different audiences walk through /app: someone scanning the QR on
+// the insert card, and someone clicking the CTA in a Velthi Welcome email. They
+// need separate buckets, or email clicks would be counted as card scans on the
+// Sales HQ dashboard and inflate the one number that is genuinely the card's.
+function productOf(params) {
+  return params.get("utm_source") === "email" ? "velthi-email" : "velthi-insert";
+}
+
 async function logHit(params, platform, req) {
   const body = JSON.stringify({
     page: "/app",
-    product: "velthi-insert",
+    product: productOf(params),
     insert_variant: (params.get("utm_source") || "").slice(0, 60),
     hook: platform,
     visitor: "",
