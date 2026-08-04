@@ -19,9 +19,10 @@ const APPLE_ID = "6769715940";
 const APPLE_PROVIDER_TOKEN = "120099410";
 const ANDROID_PACKAGE = "com.ignaris.velthi";
 
-// Flip to true the day the Play production release is live. Until then Android
-// users would hit a 404 on the store page, so they land on the site instead.
-const PLAY_LIVE = false;
+// Play production release went live on 2026-08-03, so Android now goes to the
+// store instead of falling back to the site. Every card already printed starts
+// pointing at Play from this deploy on, with no reprint.
+const PLAY_LIVE = true;
 
 const TRACK_URL = "https://hq.ignaris.com/api/funnel/track";
 const SITE = "https://velthi.app/";
