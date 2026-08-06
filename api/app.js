@@ -61,12 +61,19 @@ function siteUrl(params) {
   return q ? `${SITE}?${q}` : SITE;
 }
 
-// Two very different audiences walk through /app: someone scanning the QR on
-// the insert card, and someone clicking the CTA in a Velthi Welcome email. They
-// need separate buckets, or email clicks would be counted as card scans on the
-// Sales HQ dashboard and inflate the one number that is genuinely the card's.
+// Three very different audiences walk through /app: someone scanning the QR on
+// the insert card, someone clicking the CTA in a Velthi Welcome email, and —
+// since the video advertorial (2026-08) — someone tapping a paid or social ad.
+// They need separate buckets, or ad clicks would be counted as card scans on
+// the Sales HQ dashboard and inflate the one number that is genuinely the
+// card's. The card keeps the default bucket on purpose: it is the only channel
+// whose links we cannot edit after printing.
+const ADS_SOURCES = new Set(["meta", "facebook", "instagram", "tiktok", "social", "ads"]);
 function productOf(params) {
-  return params.get("utm_source") === "email" ? "velthi-email" : "velthi-insert";
+  const src = (params.get("utm_source") || "").toLowerCase();
+  if (src === "email") return "velthi-email";
+  if (ADS_SOURCES.has(src)) return "velthi-ads";
+  return "velthi-insert";
 }
 
 async function logHit(params, platform, req) {
