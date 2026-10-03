@@ -50,7 +50,7 @@
 <h1>Politica de Confidențialitate</h1>
 <p><strong>Aplicația Velthi</strong>
 <strong>Data intrării în vigoare:</strong> data publicării aplicației în App Store și Google Play
-<strong>Versiune:</strong> 1.0</p>
+<strong>Versiune:</strong> 1.1</p>
 <h2>1. Operatorul datelor</h2>
 <p>Datele tale personale sunt prelucrate de <strong>Ignaris Prime SRL</strong>, persoană juridică română cu sediul social în Constanța, str. Ștefan Mihăileanu, nr. 45, înregistrată la Registrul Comerțului sub numărul <strong>J2017000489139</strong>, cod unic de înregistrare <strong>RO37156492</strong>, reprezentată legal prin administrator Cristian Ignat („noi&quot;, „Ignaris Prime SRL&quot;).</p>
 <p>Suntem responsabili pentru modul în care colectăm, folosim și păstrăm datele tale atunci când folosești aplicația mobilă Velthi.</p>
@@ -123,9 +123,14 @@
 <td>Consimțământ explicit la prima încărcare (Art. 9(2)(a))</td>
 </tr>
 <tr>
-<td>INCI produs trimis la OpenAI pentru categorizare</td>
-<td>Identificare automată categorie și ingrediente</td>
+<td>Fotografiile ambalajului, lista de ingrediente (INCI) și numele produsului, trimise la Anthropic</td>
+<td>Citirea automată a produsului, identificarea categoriei și a ingredientelor cheie</td>
 <td>Executarea contractului (Art. 6(1)(b))</td>
+</tr>
+<tr>
+<td>Copia de siguranță criptată a bazei de date</td>
+<td>Refacerea serviciului și a datelor tale după o defecțiune sau o pierdere de date</td>
+<td>Interes legitim (Art. 6(1)(f)): continuitatea serviciului. Copiile răspund și cerinței din Art. 32(1)(c) GDPR de a putea reface accesul la date după un incident</td>
 </tr>
 <tr>
 <td>Date tehnice (device, versiune app, IP în log-uri)</td>
@@ -144,19 +149,19 @@
 <h3>5.1 Supabase Inc.</h3>
 <ul>
 <li>Ce face: găzduiește baza de date, sistemul de autentificare (magic link), stocarea fotografiilor</li>
-<li>Unde: servere în Frankfurt, Germania (Uniunea Europeană). Datele tale nu părăsesc UE pentru stocare.</li>
+<li>Unde: servere în Frankfurt, Germania (Uniunea Europeană). Datele tale nu părăsesc UE pentru stocare, nici în copia de siguranță (vezi 5.6 și 5.7).</li>
 <li>Ce primește: toate datele de cont, profil, produse, rutină, jurnal, fotografii</li>
 <li>Garanții: Supabase este conform GDPR, semnează DPA (Data Processing Agreement) standard</li>
 </ul>
-<h3>5.2 OpenAI, LLC</h3>
+<h3>5.2 Anthropic</h3>
 <ul>
-<li>Ce face: procesează lista de ingrediente (INCI) pe care o introduci sau o extragem prin OCR, pentru a-ți clasifica automat produsul</li>
-<li>Unde: servere în Statele Unite ale Americii</li>
-<li>Ce primește: doar textul INCI-ului produsului și numele produsului. Nimic legat de profilul tău, identitatea ta sau alte produse din catalogul tău.</li>
-<li>Transfer internațional: datele se transferă în SUA pe baza Standard Contractual Clauses (SCC) aprobate de Comisia Europeană, conform Art. 46 GDPR</li>
-<li>Retenție OpenAI: OpenAI declară că nu antrenează modele cu date din API și șterge intrările în maxim 30 de zile</li>
+<li>Ce face: citește fotografiile produselor tale (fața ambalajului și eticheta cu ingrediente) și lista de ingrediente (INCI), ca să-ți identifice produsul și să-i stabilească categoria și ingredientele cheie</li>
+<li>Cine: Anthropic Ireland, Limited (contractul pentru clienții din UE); procesarea are loc pe servere Anthropic din Statele Unite ale Americii</li>
+<li>Ce primește: fotografiile pe care le faci la adăugarea sau verificarea unui produs, textul INCI-ului, brandul și numele produsului. Nimic legat de profilul tău, de identitatea ta sau de alte produse din catalogul tău.</li>
+<li>Transfer internațional: datele se transferă în SUA pe baza clauzelor contractuale standard (SCC) aprobate de Comisia Europeană, incluse în acordul de prelucrare a datelor al Anthropic, conform Art. 46 GDPR</li>
+<li>Retenție Anthropic: Anthropic nu folosește datele primite prin API pentru antrenarea modelelor și le șterge automat în cel mult 30 de zile, cu excepțiile din politicile Anthropic (de exemplu, o încălcare a regulilor de utilizare)</li>
 </ul>
-<p>Dacă nu dorești ca INCI-ul produselor tale să fie trimis la OpenAI, poți adăuga produsul cu categorie manuală, fără AI categorize, prin opțiunea „Selectează categoria manual&quot; în ecranul de adăugare produs.</p>
+<p>Dacă adaugi un produs de mână, fără fotografie și fără lista de ingrediente, nu trimitem nimic la Anthropic. Verificarea unui produs are nevoie de lista de ingrediente, deci trece prin Anthropic.</p>
 <h3>5.3 Expo (Expo Application Services)</h3>
 <ul>
 <li>Ce face: distribuție aplicație, push notifications, actualizări OTA</li>
@@ -166,15 +171,30 @@
 </ul>
 <h3>5.4 Furnizorul serverului intermediar de procesare (Supabase Edge Functions)</h3>
 <ul>
-<li>Ce face: găzduiește funcția intermediară pentru apelul la OpenAI</li>
+<li>Ce face: găzduiește funcțiile intermediare pentru apelurile la Anthropic</li>
 <li>Unde: servere Supabase (Frankfurt, EU pentru edge functions cu region pin)</li>
-<li>Ce primește: doar tranzitează INCI-ul către OpenAI, nu stochează nimic permanent</li>
+<li>Ce primește: doar tranzitează fotografiile și textul produsului către Anthropic, nu stochează nimic permanent</li>
 </ul>
 <h3>5.5 Furnizorul de e-mail tranzacțional</h3>
 <ul>
 <li>Ce face: trimite e-mailul cu link magic pentru autentificare</li>
 <li>Cine: integrat nativ prin Supabase</li>
 <li>Ce primește: adresa ta de e-mail și textul template-ului standard de autentificare</li>
+</ul>
+<h3>5.6 Hetzner Online GmbH</h3>
+<ul>
+<li>Ce face: găzduiește serverul nostru care face, în fiecare noapte, copia de siguranță criptată a bazei de date</li>
+<li>Unde: Nürnberg, Germania (Uniunea Europeană)</li>
+<li>Ce primește: datele din baza de date trec prin memoria serverului doar cât durează copia (de obicei câteva secunde) și sunt criptate acolo; pe disc ajunge doar fișierul criptat, care se șterge după ce ajunge în Google Drive</li>
+<li>Garanții: acord de prelucrare a datelor conform Art. 28 GDPR</li>
+</ul>
+<h3>5.7 Google (Google Workspace)</h3>
+<ul>
+<li>Ce face: păstrează copia de siguranță criptată a bazei de date în Google Drive, cel mult 4 zile</li>
+<li>Cine: Google Cloud EMEA Limited (Irlanda)</li>
+<li>Unde: centre de date Google din Uniunea Europeană (regiunea datelor e stabilită pe Europa)</li>
+<li>Ce primește: doar fișierul criptat. Cheia de decriptare nu este la Google, deci Google nu poate citi conținutul copiei.</li>
+<li>Garanții: acordul de prelucrare a datelor Google Cloud (Cloud Data Processing Addendum), conform Art. 28 GDPR</li>
 </ul>
 <h2>6. Cât timp păstrăm datele tale</h2>
 <div class="tablewrap"><table>
@@ -197,6 +217,14 @@
 <td>Maxim 30 zile pentru ștergere completă din toate sistemele</td>
 </tr>
 <tr>
+<td>Copii de siguranță criptate ale bazei de date, făcute de noi</td>
+<td>4 zile, apoi ștergere definitivă automată. Dacă sistemul de copiere are o defecțiune, păstrăm ultima copie validă până la remediere, ca să nu rămânem fără nicio copie</td>
+</tr>
+<tr>
+<td>Copii de siguranță ale furnizorului de bază de date (Supabase)</td>
+<td>7 zile, prin rotație automată</td>
+</tr>
+<tr>
 <td>Log-uri server (api-server, debugging)</td>
 <td>30 zile</td>
 </tr>
@@ -216,7 +244,8 @@
 <li>Row Level Security: fiecare user are acces doar la propriile date prin politici de securitate la nivel de bază de date. Nu poți accesa profilul altui user nici dacă cunoști ID-ul.</li>
 <li>Magic link cu expirare: link-urile de autentificare expiră în 1 oră și sunt single-use. Nu folosim parole.</li>
 <li>PKCE flow: autentificarea folosește standardul Proof Key for Code Exchange, protecție împotriva interceptării codurilor de sesiune.</li>
-<li>Acces restricționat: doar Cristian Ignat are acces administrativ la Supabase și OpenAI billing. Nu există acces partajat cu terți.</li>
+<li>Copii de siguranță criptate: copia zilnică a bazei de date e criptată pe serverul nostru, cu o cheie OpenPGP, înainte de a fi stocată. Cheia de decriptare e păstrată separat și o poate folosi doar administratorul.</li>
+<li>Acces restricționat: accesul administrativ la Supabase, la contul Anthropic și la copiile de siguranță îl are doar Cristian Ignat. Nu există acces partajat cu terți.</li>
 </ul>
 <h2>8. Drepturile tale (conform GDPR)</h2>
 <p>Ai următoarele drepturi cu privire la datele tale personale:</p>
@@ -259,7 +288,7 @@
 <ul>
 <li>Generarea rutinei personalizate pe baza răspunsurilor din quiz</li>
 <li>Sugestii Sauvé bazate pe pașii din rutina ta și produsele tale existente</li>
-<li>Categorizarea AI a produselor prin OpenAI</li>
+<li>Citirea și categorizarea AI a produselor prin Anthropic</li>
 </ul>
 <p>Niciuna din aceste decizii nu produce efecte juridice și nu te afectează semnificativ. Sunt sugestii informative pe care le poți accepta, ignora sau modifica oricând. Ai dreptul, conform Art. 22 GDPR, să ceri intervenție umană dacă ești nemulțumită de orice rezultat algoritmic, scrie-ne la <a href="mailto:hello@sauve.ro">hello@sauve.ro</a>.</p>
 <h2>12. Marketing și comunicări</h2>
@@ -284,8 +313,8 @@
 <hr>
 <p><strong>Operator:</strong> Ignaris Prime SRL
 <strong>Contact:</strong> <a href="mailto:hello@sauve.ro">hello@sauve.ro</a>
-<strong>Versiune:</strong> 1.0
-<strong>Data ultimei actualizări:</strong> 10 iulie 2026</p>
+<strong>Versiune:</strong> 1.1
+<strong>Data ultimei actualizări:</strong> 3 octombrie 2026. Modificările din versiunea 1.1 intră în vigoare pe 17 octombrie 2026.</p>
 </main>
 
 <footer>
